@@ -77,7 +77,7 @@ public class ReservationService {
     }
 
     public ReservationReport getReservationStatusReport(){
-        List<Reservation> completed = reservationRepository.getReservationByStatus("complete");
+        List<Reservation> completed = reservationRepository.getReservationByStatus("completed");
         List<Reservation> cancelled = reservationRepository.getReservationByStatus("cancelled");
         return new ReservationReport(completed.size(), cancelled.size());
     }
