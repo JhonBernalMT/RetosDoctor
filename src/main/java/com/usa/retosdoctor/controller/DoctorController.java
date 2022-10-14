@@ -33,7 +33,7 @@ public class DoctorController {
         return doctorService.save(doctor);
     }
 
-    @DeleteMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Doctor update(@RequestBody Doctor doctor){
         return doctorService.update(doctor);
