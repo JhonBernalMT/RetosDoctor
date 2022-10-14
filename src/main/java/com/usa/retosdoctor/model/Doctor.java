@@ -18,7 +18,7 @@ public class Doctor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idDoctor;
+    private Integer id;
     private String name;
     private String department;
     private Integer year;

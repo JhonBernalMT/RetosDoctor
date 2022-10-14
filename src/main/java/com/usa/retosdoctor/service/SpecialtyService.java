@@ -22,10 +22,10 @@ public class SpecialtyService {
     }
 
     public Specialty save(Specialty specialty){
-        if (specialty.getIdSpecialty() == null){
+        if (specialty.getId() == null){
             return specialtyRepository.save(specialty);
         } else {
-            Optional<Specialty> optionalSpecialty = specialtyRepository.getById(specialty.getIdSpecialty());
+            Optional<Specialty> optionalSpecialty = specialtyRepository.getById(specialty.getId());
             if ( optionalSpecialty.isEmpty()){
                 return specialtyRepository.save(specialty);
             } else {
@@ -33,10 +33,9 @@ public class SpecialtyService {
             }
         }
     }
-
     public Specialty update(Specialty specialty){
-        if (specialty.getIdSpecialty() != null){
-            Optional<Specialty> optionalSpecialty=specialtyRepository.getById(specialty.getIdSpecialty());
+        if (specialty.getId() != null){
+            Optional<Specialty> optionalSpecialty=specialtyRepository.getById(specialty.getId());
             if (!optionalSpecialty.isEmpty()){
                 if (specialty.getName() != null){
                     optionalSpecialty.get().setName(specialty.getName());

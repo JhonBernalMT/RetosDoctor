@@ -23,10 +23,10 @@ public class DoctorService {
     }
 
     public Doctor save(Doctor doctor){
-        if (doctor.getIdDoctor()==null){
+        if (doctor.getId()==null){
             return doctorRepository.save(doctor);
         } else {
-            Optional<Doctor> optionalDoctor=doctorRepository.getById(doctor.getIdDoctor());
+            Optional<Doctor> optionalDoctor=doctorRepository.getById(doctor.getId());
             if(optionalDoctor.isEmpty()){
                 return doctorRepository.save(doctor);
             }else {
@@ -36,8 +36,8 @@ public class DoctorService {
     }
 
     public Doctor update(Doctor doctor){
-        if (doctor.getIdDoctor()!=null){
-            Optional<Doctor> optionalDoctor=doctorRepository.getById(doctor.getIdDoctor());
+        if (doctor.getId()!=null){
+            Optional<Doctor> optionalDoctor=doctorRepository.getById(doctor.getId());
             if (!optionalDoctor.isEmpty()){
                 if (doctor.getName()!=null){
                     optionalDoctor.get().setName(doctor.getName());

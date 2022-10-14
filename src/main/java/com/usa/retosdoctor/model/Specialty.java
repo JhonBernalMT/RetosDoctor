@@ -18,7 +18,7 @@ public class Specialty  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idSpecialty;
+    private Integer id;
     private String name;
     private String description;
 
