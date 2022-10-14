@@ -25,7 +25,7 @@ public class ReservationController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Reservation> getReservation(@PathVariable("id") Integer idReservation){
+    public Optional<Reservation> getReservation(@PathVariable("idReservation") Integer idReservation){
         return reservationService.getById(idReservation);
     }
 

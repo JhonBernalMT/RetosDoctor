@@ -35,11 +35,11 @@ public class ReservationRepository {
     }
 
     public List<Reservation> getReservationByStatus(String status) {
-        return reservationCrudRepository.fillAllByStatus(status);
+        return reservationCrudRepository.findAllByStatus(status);
     }
 
     public List<Reservation> getReservationPeriod(Date dateOne, Date dateTwo) {
-        return reservationCrudRepository.fillAllByStartDateAfterAndStartDateBefore(dateOne, dateTwo);
+        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(dateOne, dateTwo);
     }
 
     public List<ClientReport> getTopClients() {
